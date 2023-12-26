@@ -83,7 +83,7 @@ def hero() -> rx.Component:
                 ),
                 rx.link(
                     rx.button(
-                        "Email hello@discoze.com",
+                        "Say hello@discoze.com",
                         bg="white",
                         box_shadow=styles.DOC_SHADOW_LIGHT,
                         color="black",
@@ -1476,7 +1476,7 @@ def cta() -> rx.Component:
         rx.box(
             rx.vstack(
                 rx.heading(
-                    "We respond lightning fast say hello@discoze.com",
+                    "We respond lightning fast. Say hello@discoze.com",
                     font_weight=styles.BOLD_WEIGHT,
                     font_size=styles.H3_FONT_SIZE,
                 ),

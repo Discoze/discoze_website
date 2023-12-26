@@ -66,7 +66,7 @@ def navbar() -> rx.Component:
                                 "box_shadow": "0 0 .12em .07em #6495ED, 0 0 .25em .11em #6495ED",
                             },
                         ),
-                        href="",
+                        href="https://forms.gle/gk9eccGYL3iZ4B6z6",
                         _hover={"text_decoration": "none"},
                     ),
                     spacing="1em",

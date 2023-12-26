@@ -1,11 +1,11 @@
-# DataBees
+# discoze
 
-Collect and Curate Datasets faster with DataBees. 
+Discover and Converse with friends through AI Twins
 
 
 ## About
 
-This project uses reflex.dev framework to create https://www.databees.work website in pure python.
+This project uses reflex.dev framework to create https://www.discoze.work website in pure python.
 The boilerplate SaaS code for this project is implemented via PySaaS.io.
 
 
@@ -24,8 +24,8 @@ The boilerplate SaaS code for this project is implemented via PySaaS.io.
 
 2. Clone repo, create and activate virtual env:
     ```
-   git clone git@github.com:rushout09/databees_website.git
-   cd databees_website 
+   git clone git@github.com:rushout09/discoze_website.git
+   cd discoze_website 
    python3 -m venv venv
    source venv/bin/activate
     ```
@@ -53,10 +53,10 @@ The boilerplate SaaS code for this project is implemented via PySaaS.io.
    ```
 5. Create systemd service [Only for production. Follow step 5 for running locally]
    ```
-   sudo nano /etc/systemd/system/databees-website.service
+   sudo nano /etc/systemd/system/discoze-website.service
    Paste the example.service file
-   sudo systemctl enable databees-website.service 
-   sudo systemctl start databees-website.service
+   sudo systemctl enable discoze-website.service 
+   sudo systemctl start discoze-website.service
    ```
 6. Run locally with command:
    ```
@@ -72,13 +72,13 @@ The boilerplate SaaS code for this project is implemented via PySaaS.io.
 The frontend runs on port 3000 by default.
 The backend runs on port 8000 by default.
 According to documentation, the backend host needs to be publicly accessible for frontend to access it.
-That's why we run backend on https://backend.databees.work and frontend on https://www.databees.work
+That's why we run backend on https://backend.discoze.work and frontend on https://www.discoze.work
 We set the backend host as API_URL env var in example.service (systemd) file.
 
 While setting up our load balancer, 
 we redirect all request that come to port 80 to port 443.
-We forward all request from 443 at backend.databees.work to target group with port 8000.
-We forward all request from 443 at *.databees.work to target group with port 3000.
+We forward all request from 443 at backend.discoze.work to target group with port 8080.
+We forward all request from 443 at *.discoze.work to target group with port 3030.
 
 We only open port 443 and 80 for public on our security group for load balancer.
 All ports are open on machine for traffic coming from inside the VPC from same Security Group.
