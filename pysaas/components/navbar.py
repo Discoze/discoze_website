@@ -14,11 +14,11 @@ def navbar() -> rx.Component:
                     rx.tablet_and_desktop(
                         rx.text(
                             "Discoze",
-                            font_size=styles.H3_FONT_SIZE,
-                            font_weight=600,
+                            font_size=styles.H1_FONT_SIZE,
+                            font_weight=800,
                         ),
                     ),
-                    spacing="0.25em",
+                    spacing="1em",
                 ),
                 href="/",
                 _hover={"text_decoration": "none"},
