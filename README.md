@@ -22,12 +22,13 @@ The boilerplate SaaS code for this project is implemented via PySaaS.io.
    Paste this to Github SSH Keys so that machine can access Github.
    ```
 
-2. Clone repo, create and activate virtual env:
+2. Clone repo, create and activate virtual env, init reflex:
     ```
    git clone git@github.com:rushout09/discoze_website.git
    cd discoze_website 
    python3 -m venv venv
    source venv/bin/activate
+   reflex init
     ```
 3. Install requirements:
     ```
