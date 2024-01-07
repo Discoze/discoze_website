@@ -5,7 +5,7 @@ Discover and Converse with friends through AI Twins
 
 ## About
 
-This project uses reflex.dev framework to create https://www.discoze.work website in pure python.
+This project uses reflex.dev framework to create https://www.discoze.com website in pure python.
 The boilerplate SaaS code for this project is implemented via PySaaS.io.
 
 
