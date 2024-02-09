@@ -44,15 +44,15 @@ def navbar() -> rx.Component:
                     #         **styles.BUTTON_STYLE,
                     #     ),
                     # ),
-                    # rx.tablet_and_desktop(
-                    #     rx.link(
-                    #         rx.text(
-                    #             "Blog",
-                    #         ),
-                    #         href="/blog",
-                    #         **styles.BUTTON_STYLE,
-                    #     ),
-                    # ),
+                    rx.tablet_and_desktop(
+                        rx.link(
+                            rx.text(
+                                "Blog",
+                            ),
+                            href="/blog",
+                            **styles.BUTTON_STYLE,
+                        ),
+                    ),
                     rx.link(
                         rx.button(
                             "Join the waitlist!",

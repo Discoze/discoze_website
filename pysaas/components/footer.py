@@ -16,7 +16,7 @@ def footer() -> rx.Component:
                     rx.text("Product", color=styles.DOC_REG_TEXT_COLOR),
                     rx.link("Features", href="/#features", style=styles.FOOTER_ITEM_STYLE),
                     # rx.link("Pricing", href="/#pricing", style=styles.FOOTER_ITEM_STYLE),
-                    # rx.link("Blog", href="/blog", style=styles.FOOTER_ITEM_STYLE),
+                    rx.link("Blog", href="/blog", style=styles.FOOTER_ITEM_STYLE),
                     align_items="start",
                 ),
                 rx.vstack(

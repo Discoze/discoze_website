@@ -633,21 +633,21 @@ app.add_page(
     description="Discover and converze with Friends Through AI Twins!",
     image="/preview.png",
 )
-# app.add_page(
-#     blog,
-#     title="Discoze | Blog",
-#     description="Discover and converze with Friends Through AI Twins!",
-#     image="/preview.png",
-#     on_load=BlogState.load_posts,
-# )
-# app.add_page(
-#     post,
-#     title="Discoze | Blog",
-#     description="TBD description.",
-#     image="/preview.png",
-#     route="/blog/[slug]",
-#     on_load=PostState.load_post,
-# )
+app.add_page(
+    blog,
+    title="Discoze | Blog",
+    description="Discover and converze with Friends Through AI Twins!",
+    image="/preview.png",
+    on_load=BlogState.load_posts,
+)
+app.add_page(
+    post,
+    title="Discoze | Blog",
+    description="TBD description.",
+    image="/preview.png",
+    route="/blog/[slug]",
+    on_load=PostState.load_post,
+)
 # app.add_page(
 #     signin,
 #     title="PySaaS | Sign in",
