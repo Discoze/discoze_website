@@ -23,7 +23,7 @@ def footer() -> rx.Component:
                     rx.text("Social", color=styles.DOC_REG_TEXT_COLOR),
                     rx.link(
                         "Instagram",
-                        href="/",
+                        href="https://www.instagram.com/vedvaani9/",
                         style=styles.FOOTER_ITEM_STYLE,
                     ),
                     rx.link(
@@ -34,6 +34,11 @@ def footer() -> rx.Component:
                     rx.link(
                         "GitHub",
                         href="https://github.com/rushout09/discoze_website",
+                        style=styles.FOOTER_ITEM_STYLE,
+                    ),
+                    rx.link(
+                        "Twitter",
+                        href="https://twitter.com/Vedvaani_",
                         style=styles.FOOTER_ITEM_STYLE,
                     ),
                     align_items="start",
@@ -104,12 +109,12 @@ def blog_footer() -> rx.Component:
                         rx.text("Social", color=styles.DOC_REG_TEXT_COLOR),
                         rx.link(
                             "Instagram",
-                            href="/",
+                            href="https://www.instagram.com/vedvaani9/",
                             style=styles.FOOTER_ITEM_STYLE,
                         ),
                         rx.link(
                             "Contact Us",
-                            href="mailto: hello@databees.work",
+                            href="mailto: hello@discoze.com",
                             style=styles.FOOTER_ITEM_STYLE,
                         ),
                         rx.link(
@@ -117,6 +122,11 @@ def blog_footer() -> rx.Component:
                             href="https://github.com/rushout09/discoze_website",
                             style=styles.FOOTER_ITEM_STYLE,
                         ),
+                         rx.link(
+                        "Twitter",
+                        href="https://twitter.com/Vedvaani_",
+                        style=styles.FOOTER_ITEM_STYLE,
+                    ),
                         align_items="start",
                     ),
                 ),

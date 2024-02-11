@@ -629,21 +629,21 @@ async def subscription_update(request: Request):
 # Define app pages and routes
 app.add_page(
     index,
-    title="Discoze",
-    description="Discover and converze with Friends Through AI Twins!",
+    title="Vedvaani",
+    description="converse with AI characters, with creators also participating the conversations!",
     image="/preview.png",
 )
 app.add_page(
     blog,
-    title="Discoze | Blog",
-    description="Discover and converze with Friends Through AI Twins!",
+    title="Vedvaani | Blog",
+    description="converse with AI characters, with creators also participating the conversations!",
     image="/preview.png",
     on_load=BlogState.load_posts,
 )
 app.add_page(
     post,
-    title="Discoze | Blog",
-    description="TBD description.",
+    title="Vedvaani | Blog",
+    description="converse with AI characters, with creators also participating the conversations!",
     image="/preview.png",
     route="/blog/[slug]",
     on_load=PostState.load_post,
@@ -678,25 +678,25 @@ app.add_page(
 # )
 app.add_custom_404_page(
     not_found,
-    title="Discoze | Page not found",
+    title="vedvaani | Page not found",
     description="TBD description.",
     image="/preview.png",
 )
 app.add_page(
     terms,
-    title='Discoze | Terms and Condition',
+    title='vedvaani | Terms and Condition',
     description='TBD description',
     image='/preview.png',
 )
 app.add_page(
     privacy,
-    title='Discoze | Privacy Policy',
+    title='vedvaani | Privacy Policy',
     description='TBD Description',
     image='/preview.png',
 )
 app.add_page(
     cookies,
-    title='Discoze | Cookies Policy',
+    title='vedvaani | Cookies Policy',
     description='TBD description',
     image='/preview.png',
 )
