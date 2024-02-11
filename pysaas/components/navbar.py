@@ -13,7 +13,7 @@ def navbar() -> rx.Component:
                     logo(**styles.LOGO_NAV_STYLE),
                     rx.tablet_and_desktop(
                         rx.text(
-                            "Discoze",
+                            "Vedvaani",
                             font_size=styles.H1_FONT_SIZE,
                             font_weight=800,
                         ),
@@ -55,7 +55,7 @@ def navbar() -> rx.Component:
                     ),
                     rx.link(
                         rx.button(
-                            "Join the waitlist!",
+                            "Download Now",
                             bg=styles.DOC_TEXT_COLOR,
                             box_shadow=styles.DOC_SHADOW_LIGHT,
                             color="white",
@@ -66,7 +66,7 @@ def navbar() -> rx.Component:
                                 "box_shadow": "0 0 .12em .07em #6495ED, 0 0 .25em .11em #6495ED",
                             },
                         ),
-                        href="https://forms.gle/gk9eccGYL3iZ4B6z6",
+                        href="https://play.google.com/store/apps/details?id=com.vedvaani.app",
                         _hover={"text_decoration": "none"},
                     ),
                     spacing="1em",

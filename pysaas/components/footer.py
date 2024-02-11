@@ -104,12 +104,12 @@ def blog_footer() -> rx.Component:
                         rx.text("Social", color=styles.DOC_REG_TEXT_COLOR),
                         rx.link(
                             "Instagram",
-                            href="/",
+                            href="https://www.instagram.com/vedvaani9/",
                             style=styles.FOOTER_ITEM_STYLE,
                         ),
                         rx.link(
                             "Contact Us",
-                            href="mailto: hello@databees.work",
+                            href="mailto: hello@discoze.com",
                             style=styles.FOOTER_ITEM_STYLE,
                         ),
                         rx.link(
