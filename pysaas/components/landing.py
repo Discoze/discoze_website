@@ -12,7 +12,7 @@ def hero() -> rx.Component:
                     rx.container(
                         
                     rx.text(
-                        "Converse with AI characters, with creators can also participating in the conversations!",
+                        "Converse with AI characters, with creators also participating in the conversations!",
                         font_size="1.7em",
                         font_weight=800,
                         text_align="center",
