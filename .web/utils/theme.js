@@ -1,1 +1,1 @@
-export default {"styles": {"global": {"::selection": {"backgroundColor": "rgba(107,99,246, 0.4)"}, "body": {"a": {"textDecoration": "underline", "textColor": "grey"}, "li": {"paddingLeft": "2em"}}}}}
+export default {"styles": {"global": {"::selection": {"backgroundColor": "rgba(107,99,246, 0.4)"}, "body": {"*": {"fontFamily": "Ubuntu"}, "a": {"textDecoration": "underline", "textColor": "grey"}, "li": {"paddingLeft": "2em"}}}}}

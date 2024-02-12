@@ -35,7 +35,7 @@ from pysaas.pages.notfound import not_found
 from pysaas.pages.terms import terms
 from pysaas.pages.privacy import privacy
 from pysaas.pages.cookies import cookies
-from pysaas.styles import BASE_STYLE
+from pysaas.styles import BASE_STYLE,STYLESHEETS
 
 # Configure secrets
 load_dotenv()
@@ -59,7 +59,7 @@ firebase_config = {
 }
 firebase = pyrebase.initialize_app(firebase_config)
 auth = firebase.auth()
-db = firebase.database()
+# db = firebase.database()
 
 btc = yf.Ticker("BTC-USD")
 btc = pd.DataFrame(btc.history(period="1mo", rounding="True"))
@@ -140,126 +140,126 @@ class AuthState(State):
         self.error_message = ""
         self.show_error = False
 
-    def verify_and_load(self):
-        if self.signed_out:
-            return rx.redirect("/signin")
+    # def verify_and_load(self):
+    #     if self.signed_out:
+    #         return rx.redirect("/signin")
 
-        DashState.load_data("BTC")
+    #     DashState.load_data("BTC")
 
-        try:
-            users = db.child("users").get().each()
-            for user in users:
-                if user.val()["email"] == self.user_email:
-                    self.plan = user.val()["plan"]
-                    self.renews_at = user.val()["renews_at"]
-                    self.sub_id = user.val()["sub_id"]
+    #     try:
+    #         users = db.child("users").get().each()
+    #         for user in users:
+    #             if user.val()["email"] == self.user_email:
+    #                 self.plan = user.val()["plan"]
+    #                 self.renews_at = user.val()["renews_at"]
+    #                 self.sub_id = user.val()["sub_id"]
 
-                    if self.sub_id:
-                        try:
-                            url = f"https://api.lemonsqueezy.com/v1/subscriptions/{self.sub_id}"
-                            r = requests.get(url, headers={
-                                "Authorization": f"Bearer {LM_API_KEY}",
-                                "Accept": "application/vnd.api+json",
-                                "Content-Type": "application/vnd.api+json"
-                            })
-                            result_dict = json.loads(r.text)
-                            data = result_dict["data"]
-                            self.manage_sub_url = data["attributes"]["urls"]["update_payment_method"]
-                        except:
-                            self.manage_sub_url = ""
-                    else:
-                        self.manage_sub_url = ""
-        except:
-            self.plan = False
-            self.renews_at = ""
-            self.sub_id = ""
-            self.manage_sub_url = ""
+    #                 if self.sub_id:
+    #                     try:
+    #                         url = f"https://api.lemonsqueezy.com/v1/subscriptions/{self.sub_id}"
+    #                         r = requests.get(url, headers={
+    #                             "Authorization": f"Bearer {LM_API_KEY}",
+    #                             "Accept": "application/vnd.api+json",
+    #                             "Content-Type": "application/vnd.api+json"
+    #                         })
+    #                         result_dict = json.loads(r.text)
+    #                         data = result_dict["data"]
+    #                         self.manage_sub_url = data["attributes"]["urls"]["update_payment_method"]
+    #                     except:
+    #                         self.manage_sub_url = ""
+    #                 else:
+    #                     self.manage_sub_url = ""
+    #     except:
+    #         self.plan = False
+    #         self.renews_at = ""
+    #         self.sub_id = ""
+    #         self.manage_sub_url = ""
 
-    def signin(self):
-        try:
-            user = auth.sign_in_with_email_and_password(self.email_field, self.password_field)
-            if user["registered"]:
-                self.user_email = user["email"]
-                self.id_token = user["idToken"]
-                self.refresh_token = user["refreshToken"]
+    # def signin(self):
+    #     try:
+    #         user = auth.sign_in_with_email_and_password(self.email_field, self.password_field)
+    #         if user["registered"]:
+    #             self.user_email = user["email"]
+    #             self.id_token = user["idToken"]
+    #             self.refresh_token = user["refreshToken"]
 
-                users = db.child("users").get().each()
-                for user in users:
-                    if user.val()["email"] == self.user_email:
-                        self.name = user.val()["name"]
-                        self.plan = user.val()["plan"]
-                        self.renews_at = user.val()["renews_at"]
-                        self.sub_id = user.val()["sub_id"]
-                        self.signed_in = True
-                        DashState.name_field = self.name
-                        return rx.redirect("/dashboard")
+    #             users = db.child("users").get().each()
+    #             for user in users:
+    #                 if user.val()["email"] == self.user_email:
+    #                     self.name = user.val()["name"]
+    #                     self.plan = user.val()["plan"]
+    #                     self.renews_at = user.val()["renews_at"]
+    #                     self.sub_id = user.val()["sub_id"]
+    #                     self.signed_in = True
+    #                     DashState.name_field = self.name
+    #                     return rx.redirect("/dashboard")
 
-            self.error_message = "Invalid email or password. Try again."
-            self.show_error = True
-            return
-        except:
-            self.error_message = "Invalid email or password. Try again."
-            self.show_error = True
-            return
+    #         self.error_message = "Invalid email or password. Try again."
+    #         self.show_error = True
+    #         return
+    #     except:
+    #         self.error_message = "Invalid email or password. Try again."
+    #         self.show_error = True
+    #         return
 
-    def signup(self):
-        try:
-            validation = validate_email(self.email_field, check_deliverability=True)
-            self.email_field = validation.email
-        except Exception as e:
-            self.error_message = str(e)
-            self.show_error = True
-            return
+    # def signup(self):
+    #     try:
+    #         validation = validate_email(self.email_field, check_deliverability=True)
+    #         self.email_field = validation.email
+    #     except Exception as e:
+    #         self.error_message = str(e)
+    #         self.show_error = True
+    #         return
 
-        if len(self.password_field) < 6:
-            self.error_message = "Password must contain at least 6 characters."
-            self.show_error = True
-            return
+    #     if len(self.password_field) < 6:
+    #         self.error_message = "Password must contain at least 6 characters."
+    #         self.show_error = True
+    #         return
 
-        if self.password_field != self.confirm_password_field:
-            self.error_message = "Passwords do not match."
-            self.show_error = True
-            return
+    #     if self.password_field != self.confirm_password_field:
+    #         self.error_message = "Passwords do not match."
+    #         self.show_error = True
+    #         return
 
-        try:
-            new_user = auth.create_user_with_email_and_password(self.email_field, self.password_field)
-            self.user_email = new_user["email"]
-            self.name = ""
-            self.plan = False
-            self.renews_at = ""
-            self.sub_id = ""
-            self.manage_sub_url = ""
-            self.id_token = new_user["idToken"]
-            self.refresh_token = new_user["refreshToken"]
+    #     try:
+    #         new_user = auth.create_user_with_email_and_password(self.email_field, self.password_field)
+    #         self.user_email = new_user["email"]
+    #         self.name = ""
+    #         self.plan = False
+    #         self.renews_at = ""
+    #         self.sub_id = ""
+    #         self.manage_sub_url = ""
+    #         self.id_token = new_user["idToken"]
+    #         self.refresh_token = new_user["refreshToken"]
 
-            user_data = {
-                "email": self.user_email,
-                "name": self.name,
-                "plan": self.plan,
-                "renews_at": self.renews_at,
-                "sub_id": self.sub_id
-            }
-            db.child("users").push(user_data)
+    #         user_data = {
+    #             "email": self.user_email,
+    #             "name": self.name,
+    #             "plan": self.plan,
+    #             "renews_at": self.renews_at,
+    #             "sub_id": self.sub_id
+    #         }
+    #         db.child("users").push(user_data)
 
-            self.signed_in = True
-            DashState.name_field = self.name
-            return rx.redirect("/dashboard")
-        except:
-            self.error_message = "Email already exists."
-            self.show_error = True
-            return
+    #         self.signed_in = True
+    #         DashState.name_field = self.name
+    #         return rx.redirect("/dashboard")
+    #     except:
+    #         self.error_message = "Email already exists."
+    #         self.show_error = True
+    #         return
 
-    def signout(self):
-        self.user_email = None
-        self.name = None
-        self.plan = False
-        self.renews_at = None
-        self.sub_id = None
-        self.manage_sub_url = None
-        self.id_token = None
-        self.refresh_token = None
-        self.signed_in = False
-        return rx.redirect("/")
+    # def signout(self):
+    #     self.user_email = None
+    #     self.name = None
+    #     self.plan = False
+    #     self.renews_at = None
+    #     self.sub_id = None
+    #     self.manage_sub_url = None
+    #     self.id_token = None
+    #     self.refresh_token = None
+    #     self.signed_in = False
+    #     return rx.redirect("/")
 
 
 # The index state class
@@ -492,62 +492,62 @@ class DashState(State):
     def toggle_checked(self, checked):
         self.confirmed_cancel = checked
 
-    def cancel_subscription(self):
-        if not self.confirmed_cancel:
-            return
+    # def cancel_subscription(self):
+    #     if not self.confirmed_cancel:
+    #         return
 
-        if self.sub_id:
-            try:
-                url = f"https://api.lemonsqueezy.com/v1/subscriptions/{self.sub_id}"
-                r = requests.delete(url, headers={
-                    "Authorization": f"Bearer {LM_API_KEY}",
-                    "Accept": "application/vnd.api+json",
-                    "Content-Type": "application/vnd.api+json"
-                })
-                result_dict = json.loads(r.text)
-                data = result_dict["data"]
-                if data["attributes"]["status"] == "cancelled":
-                    users = db.child("users").get().each()
-                    for user in users:
-                        if user.val()["email"] == self.user_email:
-                            self.plan = False
-                            self.renews_at = ""
-                            self.sub_id = ""
-                            db.child("users").child(user.key()).update({"plan": self.plan})
-                            db.child("users").child(user.key()).update({"renews_at": self.renews_at})
-                            db.child("users").child(user.key()).update({"sub_id": self.sub_id})
-                            return rx.redirect("/dashboard")
+    #     if self.sub_id:
+    #         try:
+    #             url = f"https://api.lemonsqueezy.com/v1/subscriptions/{self.sub_id}"
+    #             r = requests.delete(url, headers={
+    #                 "Authorization": f"Bearer {LM_API_KEY}",
+    #                 "Accept": "application/vnd.api+json",
+    #                 "Content-Type": "application/vnd.api+json"
+    #             })
+    #             result_dict = json.loads(r.text)
+    #             data = result_dict["data"]
+    #             if data["attributes"]["status"] == "cancelled":
+    #                 users = db.child("users").get().each()
+    #                 for user in users:
+    #                     if user.val()["email"] == self.user_email:
+    #                         self.plan = False
+    #                         self.renews_at = ""
+    #                         self.sub_id = ""
+    #                         db.child("users").child(user.key()).update({"plan": self.plan})
+    #                         db.child("users").child(user.key()).update({"renews_at": self.renews_at})
+    #                         db.child("users").child(user.key()).update({"sub_id": self.sub_id})
+    #                         return rx.redirect("/dashboard")
 
-                self.cancel_error_message = "Failed to cancel subscription. Try again."
-                self.show_cancel_error = True
-            except:
-                self.cancel_error_message = "Failed to cancel subscription. Try again."
-                self.show_cancel_error = True
+    #             self.cancel_error_message = "Failed to cancel subscription. Try again."
+    #             self.show_cancel_error = True
+    #         except:
+    #             self.cancel_error_message = "Failed to cancel subscription. Try again."
+    #             self.show_cancel_error = True
 
-    def update_user_data(self):
-        if self.signed_out:
-            return rx.redirect("/signin")
+    # def update_user_data(self):
+    #     if self.signed_out:
+    #         return rx.redirect("/signin")
 
-        try:
-            users = db.child("users").get().each()
-            for user in users:
-                if user.val()["email"] == self.user_email:
-                    db.child("users").child(user.key()).update({"name": self.name_field})
-                    self.name = self.name_field
-                    self.show_profile_error = False
-                    self.alert_message = "Updated account profile information."
-                    self.alert_heading = "Success!"
-                    self.close_button_message = "Close"
-                    self.show_alert = True
-                    return
+    #     try:
+    #         users = db.child("users").get().each()
+    #         for user in users:
+    #             if user.val()["email"] == self.user_email:
+    #                 db.child("users").child(user.key()).update({"name": self.name_field})
+    #                 self.name = self.name_field
+    #                 self.show_profile_error = False
+    #                 self.alert_message = "Updated account profile information."
+    #                 self.alert_heading = "Success!"
+    #                 self.close_button_message = "Close"
+    #                 self.show_alert = True
+    #                 return
 
-            self.profile_error_message = "Failed to update user data. Try again."
-            self.show_profile_error = True
-            return
-        except:
-            self.profile_error_message = "Failed to update user data. Try again."
-            self.show_profile_error = True
-            return
+    #         self.profile_error_message = "Failed to update user data. Try again."
+    #         self.show_profile_error = True
+    #         return
+    #     except:
+    #         self.profile_error_message = "Failed to update user data. Try again."
+    #         self.show_profile_error = True
+    #         return
 
     def send_password_reset(self):
         if self.signed_out:
@@ -579,7 +579,7 @@ class DashState(State):
 
 
 # Configure app with main state class
-app = rx.App(state=State, style=BASE_STYLE)
+app = rx.App(state=State, style=BASE_STYLE,stylesheets=STYLESHEETS)
 
 
 @app.api.get("/health-check", status_code=200)
@@ -589,41 +589,41 @@ async def health_check():
 
 # Webhook listener
 # Allows your app to stay in sync with Lemon Squeezy subscription updates
-@app.api.post("/webhooks/lmsqueezy", status_code=200)
-async def subscription_update(request: Request):
-    payload = await request.body()
-    signature = request.headers.get("X-Signature")
-    digest = hmac.new(LM_SIGNING_SECRET.encode(), payload, hashlib.sha256).hexdigest()
-    if not hmac.compare_digest(digest, signature):
-        raise Exception(400, "Invalid signature.")
+# @app.api.post("/webhooks/lmsqueezy", status_code=200)
+# async def subscription_update(request: Request):
+#     payload = await request.body()
+#     signature = request.headers.get("X-Signature")
+#     digest = hmac.new(LM_SIGNING_SECRET.encode(), payload, hashlib.sha256).hexdigest()
+#     if not hmac.compare_digest(digest, signature):
+#         raise Exception(400, "Invalid signature.")
 
-    body = json.loads(payload)
-    try:
-        event = body["meta"]["event_name"]
-        if event == "subscription_created" or event == "subscription_updated":
-            sub_id = body["data"]["id"]
-            user_email = body["data"]["attributes"]["user_email"]
-            status = body["data"]["attributes"]["status"]
-            if status == "active":
-                renews_at = body["data"]["attributes"]["renews_at"]
-                users = db.child("users").get().each()
-                for user in users:
-                    if user.val()["email"] == user_email:
-                        db.child("users").child(user.key()).update({"sub_id": sub_id})
-                        db.child("users").child(user.key()).update({"plan": True})
-                        db.child("users").child(user.key()).update({"renews_at": renews_at})
-                        return {"message": f"Saved active plan details for {user_email}"}
-            elif status == "unpaid" or status == "cancelled" or status == "expired":
-                users = db.child("users").get().each()
-                for user in users:
-                    if user.val()["email"] == user_email:
-                        db.child("users").child(user.key()).update({"sub_id": ""})
-                        db.child("users").child(user.key()).update({"plan": False})
-                        db.child("users").child(user.key()).update({"renews_at": ""})
-                        return {"message": f"Saved inactive plan details for {user_email}"}
-        return {"message": "No updates made"}
-    except Exception as e:
-        raise HTTPException(400, detail=str(e))
+#     body = json.loads(payload)
+#     try:
+#         event = body["meta"]["event_name"]
+#         if event == "subscription_created" or event == "subscription_updated":
+#             sub_id = body["data"]["id"]
+#             user_email = body["data"]["attributes"]["user_email"]
+#             status = body["data"]["attributes"]["status"]
+#             if status == "active":
+#                 renews_at = body["data"]["attributes"]["renews_at"]
+#                 users = db.child("users").get().each()
+#                 for user in users:
+#                     if user.val()["email"] == user_email:
+#                         db.child("users").child(user.key()).update({"sub_id": sub_id})
+#                         db.child("users").child(user.key()).update({"plan": True})
+#                         db.child("users").child(user.key()).update({"renews_at": renews_at})
+#                         return {"message": f"Saved active plan details for {user_email}"}
+#             elif status == "unpaid" or status == "cancelled" or status == "expired":
+#                 users = db.child("users").get().each()
+#                 for user in users:
+#                     if user.val()["email"] == user_email:
+#                         db.child("users").child(user.key()).update({"sub_id": ""})
+#                         db.child("users").child(user.key()).update({"plan": False})
+#                         db.child("users").child(user.key()).update({"renews_at": ""})
+#                         return {"message": f"Saved inactive plan details for {user_email}"}
+#         return {"message": "No updates made"}
+#     except Exception as e:
+#         raise HTTPException(400, detail=str(e))
 
 
 # Define app pages and routes

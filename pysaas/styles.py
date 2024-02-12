@@ -43,8 +43,8 @@ H2_FONT_SIZE = ["1.8em", "1.9em", "2em"]
 H3_FONT_SIZE = "1.35em"
 H4_FONT_SIZE = "1.1em"
 TEXT_FONT_SIZE = "1em"
-TEXT_FONT_FAMILY = "Inter"
-CODE_FONT_FAMILY = "Fira Code, Fira Mono, Menlo, Consolas, DejaVu Sans Mono, monospace"
+TEXT_FONT_FAMILY = "Ubuntu"
+CODE_FONT_FAMILY = "Ubuntu"
 ACCENT_COLOR = "#6495ED"
 ACCENT_COLOR_LIGHT = "rgba(107,99,246, 0.4)"
 ACCENT_COLOR_DARK = "rgb(86, 77, 209)"
@@ -74,6 +74,9 @@ DOC_BORDER_RADIUS = "1em"
 
 
 BASE_STYLE = {
+    "*":{
+        "font_family":TEXT_FONT_FAMILY
+    },
     "::selection": {
         "background_color": ACCENT_COLOR_LIGHT,
     },
@@ -88,12 +91,14 @@ BASE_STYLE = {
     rx.Code: {
         "color": ACCENT_COLOR,
     },
+
 }
 
 
 STYLESHEETS = [
-    "https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap",
-    "https://fonts.googleapis.com/css2?family=Silkscreen&display=swap",
+    # "https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap",
+    # "https://fonts.googleapis.com/css2?family=Silkscreen&display=swap",
+    "https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
 ]
 
 

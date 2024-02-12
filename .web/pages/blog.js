@@ -8,7 +8,7 @@ import NextHead from "next/head"
 
 
 
-export function Box_fa3c175c13f78aaa19552f9c301a97dd () {
+export function Box_2b02a4079f88c19a2624d8efc6067696 () {
   const state__state__blog_state = useContext(StateContexts.state__state__blog_state)
 
 
@@ -102,7 +102,7 @@ export default function Component() {
 </Container>
 </Box>
   <Fragment_b27b71a131720ae547c288b4dc26736f/>
-  <Box_fa3c175c13f78aaa19552f9c301a97dd/>
+  <Box_2b02a4079f88c19a2624d8efc6067696/>
 </Box>
 </VStack>
 </Box>

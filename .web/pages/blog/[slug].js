@@ -10,14 +10,36 @@ import NextHead from "next/head"
 
 
 
-export function Box_18c91247944f728e9a13cafb588e6199 () {
+export function Text_393771cf45b38c8cacebfd56d9681d5d () {
+  const state__state__post_state = useContext(StateContexts.state__state__post_state)
+
+
+  return (
+    <Text sx={{"fontSize": "1.5em", "fontWeight": 700}}>
+  {state__state__post_state.title}
+</Text>
+  )
+}
+
+export function Container_529ab6cc69251699a6079cbb00821249 () {
+  const state__state__post_state = useContext(StateContexts.state__state__post_state)
+
+
+  return (
+    <Container sx={{"color": "grey", "fontSize": "1.25em", "textAlign": "center", "paddingBottom": "0.4em"}}>
+  {state__state__post_state.subtitle}
+</Container>
+  )
+}
+
+export function Box_a8d64f8ab67e68e49454eba0812d8865 () {
   const state__state__post_state = useContext(StateContexts.state__state__post_state)
 
 
   return (
     <Box>
-  {state__state__post_state.paragraphs.map((paragraph, index_a57544c848c1c4274aad09cbf4c2f0fd) => (
-  <Box key={index_a57544c848c1c4274aad09cbf4c2f0fd} sx={{"paddingY": "0.5em"}}>
+  {state__state__post_state.paragraphs.map((paragraph, index_32e435454eaa635940cb06e6dac3172b) => (
+  <Box key={index_32e435454eaa635940cb06e6dac3172b} sx={{"paddingY": "0.5em"}}>
   {paragraph.map((post_content, index_015200eaa8db03dc0b1f00136ed1a6e7) => (
   <Text as={`span`} key={index_015200eaa8db03dc0b1f00136ed1a6e7}>
   <Fragment>
@@ -122,17 +144,6 @@ export function Box_18c91247944f728e9a13cafb588e6199 () {
   )
 }
 
-export function Text_18c24794a7f62de5b615926ae0e2990c () {
-  const state__state__post_state = useContext(StateContexts.state__state__post_state)
-
-
-  return (
-    <Text sx={{"fontSize": "2em", "fontWeight": 700}}>
-  {state__state__post_state.title}
-</Text>
-  )
-}
-
 export function Container_2e93ed34471c0ffd2c9749dd94f6dec8 () {
   const state__state__post_state = useContext(StateContexts.state__state__post_state)
 
@@ -144,23 +155,12 @@ export function Container_2e93ed34471c0ffd2c9749dd94f6dec8 () {
   )
 }
 
-export function Container_529ab6cc69251699a6079cbb00821249 () {
+export function Text_18c24794a7f62de5b615926ae0e2990c () {
   const state__state__post_state = useContext(StateContexts.state__state__post_state)
 
 
   return (
-    <Container sx={{"color": "grey", "fontSize": "1.25em", "textAlign": "center", "paddingBottom": "0.4em"}}>
-  {state__state__post_state.subtitle}
-</Container>
-  )
-}
-
-export function Text_393771cf45b38c8cacebfd56d9681d5d () {
-  const state__state__post_state = useContext(StateContexts.state__state__post_state)
-
-
-  return (
-    <Text sx={{"fontSize": "1.5em", "fontWeight": 700}}>
+    <Text sx={{"fontSize": "2em", "fontWeight": 700}}>
   {state__state__post_state.title}
 </Text>
   )
@@ -226,7 +226,7 @@ export default function Component() {
   <Fragment_9609cb036f84d4df47f92fe171ec8fd1/>
 </Box>
   <Fragment_b27b71a131720ae547c288b4dc26736f/>
-  <Box_18c91247944f728e9a13cafb588e6199/>
+  <Box_a8d64f8ab67e68e49454eba0812d8865/>
 </Box>
 </VStack>
 </Box>
