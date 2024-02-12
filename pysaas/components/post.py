@@ -64,7 +64,7 @@ def posts() -> rx.Component:
                 ),
                 rx.tablet_and_desktop(
                     rx.container(
-                        "Welcome to your new blog page, built in pure Python.",
+                        "Welcome to our blog.",
                         color="grey",
                         font_size="1.25em",
                         text_align="center",

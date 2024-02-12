@@ -12,46 +12,13 @@ def hero() -> rx.Component:
                     rx.container(
                         
                     rx.text(
-                        "Converse with AI characters, with creators also participating in the conversations!",
+                        "Converse with AI characters, with creators can also participating in the conversations!",
                         font_size="1.7em",
                         font_weight=800,
                         text_align="center",
 
                     ),
                     max_width="80%",
-                    ),
-                    rx.hstack(
-                            
-                        rx.text(
-                            "Vedvaani",
-                            font_size="1.8em",
-                            font_weight=800,
-                            background_image="linear-gradient(45deg, #F5750D, #Fd0)",
-                            background_clip="text",
-                            text_align="center",
-
-                        ),
-                        rx.text(
-                            "by",
-                            font_size="1em",
-                            font_weight=700,
-                            text_align="center",
-
-                        ),
-                        rx.text(
-                            "discoze",
-                            font_size="1.2em",
-                            font_weight=700,
-                            # background_image="linear-gradient(371.68deg, #7F00FF  25%, #6495ED 50%)",
-                            # background_clip="text",
-                            text_align="center",
-
-                        ),
-                        width="100%",
-                        text_align="center",
-                        justify_content="center",
-                        align_items="baseline"
-
                     ),
                     # line_height="1.15",
                 ),
@@ -66,41 +33,6 @@ def hero() -> rx.Component:
                                                 text_align="center",
                     padding="0px 10px 0px 10px"
                     ),
-                    rx.hstack(
-                            
-                        rx.text(
-                            "Vedvaani",
-                            font_size="1em",
-                            font_weight=800,
-                            background_image="linear-gradient(45deg, #F5750D, #Fd0)",
-                            background_clip="text",
-                            text_align="center",
-                            justify_content="center"
-
-                        ),
-                        rx.text(
-                            "by",
-                            font_size="0.6em",
-                            font_weight=700,
-                            text_align="center",
-
-                        ),
-                        rx.text(
-                            "Discoze",
-                            font_size="0.7em",
-                            font_weight=700,
-                            # background_image="linear-gradient(371.68deg, #7F00FF  25%, #6495ED 50%)",
-                            # background_clip="text",
-                            text_align="center",
-
-                        ),
-                        width="100%",
-                        text_align="center",
-                        justify_content="center",
-                        align_items="baseline"
-
-                    ),
-
                     # line_height="1.15",
                 ),
             ),
