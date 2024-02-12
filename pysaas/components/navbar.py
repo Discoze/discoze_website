@@ -58,7 +58,7 @@ def navbar() -> rx.Component:
                             "Download Now",
                             bg="#F5750D",
                             box_shadow=styles.DOC_SHADOW_LIGHT,
-                            color="black",
+                            color="white",
                             margin_top=0,
                             size="sm",
                             _hover={

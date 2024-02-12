@@ -10,35 +10,35 @@ def hero() -> rx.Component:
             rx.box(
                 rx.tablet_and_desktop(
                     rx.container(
-                        
-                    rx.text(
-                        "Converse with AI characters, with creators can also participating in the conversations!",
-                        font_size="1.7em",
-                        font_weight=800,
-                        text_align="center",
 
-                    ),
-                    max_width="80%",
+                        rx.text(
+                            "Converse with AI characters created by Experts and Influencers!",
+                            font_size="1.7em",
+                            font_weight=800,
+                            text_align="center",
+
+                        ),
+                        max_width="80%",
                     ),
                     # line_height="1.15",
                 ),
                 rx.mobile_only(
                     rx.container(
-                        
-                    rx.text(
-                        "Converse with AI characters, with creators also participating in the conversations!",
-                        font_size="1em",
-                        font_weight=800,
-                    ),
-                                                text_align="center",
-                    padding="0px 10px 0px 10px"
+
+                        rx.text(
+                            "Converse with AI characters created by Experts and Influencers!",
+                            font_size="1em",
+                            font_weight=800,
+                        ),
+                        text_align="center",
+                        padding="0px 10px 0px 10px"
                     ),
                     # line_height="1.15",
                 ),
             ),
             rx.container(
-                "Get instant voice and text replies from characters at ease.",
-                color="#F5750D",
+                "Get instant expert advice through both AI and human responses.",
+                color="gray",
                 font_size="0.6em",
                 text_align="center",
                 font_weight="bold"
@@ -52,11 +52,10 @@ def hero() -> rx.Component:
                             "Download Now",
                             bg="#F5750D",
                             box_shadow=styles.DOC_SHADOW_LIGHT,
-                            color="black",
+                            color="white",
                             margin_top=0,
                             size="md",
-                            border="2px solid black",
-                             _hover={
+                            _hover={
                                 "box_shadow": "0 0 .12em .07em #FD0, 0 0 .25em .11em #F5750D",
                             },
                         ),
@@ -67,10 +66,9 @@ def hero() -> rx.Component:
                             "Download Now",
                             bg="#F5750D",
                             box_shadow=styles.DOC_SHADOW_LIGHT,
-                            color="black",
+                            color="white",
                             margin_top=0,
                             size="md",
-                            border="2px solid black",
                             _hover={
                                 "box_shadow": "0 0 .12em .07em #FD0, 0 0 .25em .11em #F5750D",
                             },
@@ -86,10 +84,10 @@ def hero() -> rx.Component:
                         color="black",
                         margin_top=0,
                         size="md",
-                        border="2px solid black",
-                         _hover={
-                                "box_shadow": "0 0 .12em .07em #FD0, 0 0 .25em .11em #F5750D",
-                            },
+                        border="2px solid #F5750D",
+                        _hover={
+                            "box_shadow": "0 0 .12em .07em #FD0, 0 0 .25em .11em #F5750D",
+                        },
                     ),
                     href="mailto: hello@discoze.com",
                     _hover={
@@ -130,8 +128,8 @@ def features() -> rx.Component:
             padding_bottom="0.5em",
         ),
         rx.container(
-            "Users can interact with AI Astrologers, Movie Characters, Career and Love Coaches,Influencers, and even participate in an Adventure Game",
-            color="#F5750D",
+            "Users can interact with AI astrologers, as well as influencers in food, fashion, travel, and specialists in career advice, languages, and relationship coaching.",
+            color="gray",
             font_size="1.25em",
             text_align="center",
             padding_bottom="1.5em"
@@ -155,7 +153,7 @@ def features() -> rx.Component:
                                 ),
                                 rx.text(
                                     "Get personalized daily horoscope & free birth chart readings with our astrology app. Explore astrology signs & natal charts today!",
-                                    color="#F5750D",
+                                    color="gray",
                                 ),
                                 margin_bottom="1em",
                                 style=styles.BOX_STYLES,
@@ -164,7 +162,7 @@ def features() -> rx.Component:
                                 padding_top="2em",
                             ),
                         ),
-                        
+
                         rx.box(
                             rx.vstack(
                                 # rx.image(
@@ -179,7 +177,7 @@ def features() -> rx.Component:
                                 ),
                                 rx.text(
                                     "Explore spicy never have I ever & truth or dare questions for adults. Couples edition!",
-                                    color="#F5750D",
+                                    color="gray",
                                 ),
                                 margin_bottom="1em",
                                 style=styles.BOX_STYLES,
@@ -203,7 +201,7 @@ def features() -> rx.Component:
                                 ),
                                 rx.text(
                                     "Elevate your relationship with couples advice and witty pickup lines!",
-                                    color="#F5750D",
+                                    color="gray",
                                 ),
                                 margin_bottom="1em",
                                 style=styles.BOX_STYLES,
@@ -231,7 +229,7 @@ def features() -> rx.Component:
                                 ),
                                 rx.text(
                                     "Increase knowledge with Text based General Knowledge Questions.",
-                                    color="#F5750D"
+                                    color="gray"
                                 ),
                                 margin_bottom="1em",
                                 style=styles.BOX_STYLES,
@@ -255,7 +253,7 @@ def features() -> rx.Component:
                                 ),
                                 rx.text(
                                     "Play Kaun Banega Crorepati with Amitabh Bachchan",
-                                    color="#F5750D",
+                                    color="gray",
                                 ),
                                 margin_bottom="1em",
                                 style=styles.BOX_STYLES,
@@ -279,7 +277,7 @@ def features() -> rx.Component:
                                 ),
                                 rx.text(
                                     "Navigate your career path with expert guidance and counseling.",
-                                    color="#F5750D",
+                                    color="gray",
                                 ),
                                 margin_bottom="1em",
                                 style=styles.BOX_STYLES,
@@ -311,7 +309,7 @@ def features() -> rx.Component:
                         ),
                         rx.text(
                             "Get personalized daily horoscope & free birth chart readings with our astrology app. Explore astrology signs & natal charts today!",
-                            color="#F5750D",
+                            color="gray",
                         ),
                         margin_bottom="1em",
                         style=styles.BOX_STYLES,
@@ -333,7 +331,7 @@ def features() -> rx.Component:
                         ),
                         rx.text(
                             "Explore spicy never have I ever & truth or dare questions for adults. Couples edition!",
-                            color="#F5750D",
+                            color="gray",
                         ),
                         margin_bottom="1em",
                         style=styles.BOX_STYLES,
@@ -355,7 +353,7 @@ def features() -> rx.Component:
                         ),
                         rx.text(
                             "Elevate your relationship with couples advice and witty pickup lines!",
-                            color="#F5750D",
+                            color="gray",
                         ),
                         margin_bottom="1em",
                         style=styles.BOX_STYLES,
@@ -377,7 +375,7 @@ def features() -> rx.Component:
                         ),
                         rx.text(
                             "Increase knowledge with Text based General Knowledge Questions.",
-                            color="#F5750D",
+                            color="gray",
                         ),
                         margin_bottom="1em",
                         style=styles.BOX_STYLES,
@@ -399,14 +397,14 @@ def features() -> rx.Component:
                         ),
                         rx.text(
                             "Play Kaun Banega Crorepati with Amitabh Bachchan. Text based General Knowledge Questions.",
-                            color="#F5750D",
+                            color="gray",
                         ),
                         margin_bottom="1em",
                         style=styles.BOX_STYLES,
                         min_height="15em",
                     ),
                 ),
-                
+
                 rx.box(
                     rx.vstack(
                         # rx.image(
@@ -422,7 +420,7 @@ def features() -> rx.Component:
                         ),
                         rx.text(
                             "Navigate your career path with expert guidance and counseling.",
-                            color="#F5750D",
+                            color="gray",
                         ),
                         margin_bottom="1em",
                         style=styles.BOX_STYLES,
@@ -447,7 +445,7 @@ def pricing_cards() -> rx.Component:
                     is_checked=pysaas.IndexState.yearly_pricing,
                     on_change=pysaas.IndexState.toggle_pricing,
                 ),
-                rx.text("Yearly ",),
+                rx.text("Yearly ", ),
             ),
             padding_bottom="1.5em",
         ),
@@ -631,7 +629,7 @@ def pricing_cards() -> rx.Component:
                                     ),
                                     href="/signup",
                                 ),
-                                    rx.link(
+                                rx.link(
                                     rx.button(
                                         "Get Started",
                                         bg="black",
@@ -1019,7 +1017,7 @@ def purchase_cards() -> rx.Component:
                     is_checked=pysaas.IndexState.yearly_pricing,
                     on_change=pysaas.IndexState.toggle_pricing,
                 ),
-                rx.text("Yearly ",),
+                rx.text("Yearly ", ),
             ),
             padding_bottom="1.5em",
         ),
@@ -1522,7 +1520,7 @@ def purchase_cards() -> rx.Component:
                 spacing="1em",
             ),
         ),
-    ) 
+    )
 
 
 def pricing() -> rx.Component:
@@ -1576,12 +1574,12 @@ def cta() -> rx.Component:
                     rx.link(
                         rx.button(
                             "Download now!",
-                            bg="#F5750D",
+                            bg="white",
                             box_shadow=styles.DOC_SHADOW_LIGHT,
-                            color="black",
+                            color="gray",
                             margin_top=0,
                             size="md",
-                             _hover={
+                            _hover={
                                 "box_shadow": "0 0 .12em .07em #FD0, 0 0 .25em .11em #F5750D",
                             },
                         ),
@@ -1613,7 +1611,7 @@ def cta() -> rx.Component:
             font_size="1.2em",
             padding_y="4em",
             color="white",
-            bg="black",
+            bg="#F5750D",
         ),
         padding_top="10%",
         width="100%",

@@ -36,6 +36,7 @@ from pysaas.pages.terms import terms
 from pysaas.pages.privacy import privacy
 from pysaas.pages.cookies import cookies
 from pysaas.styles import BASE_STYLE
+from pysaas.styles import BASE_STYLE,STYLESHEETS
 
 # Configure secrets
 load_dotenv()
@@ -579,7 +580,7 @@ class DashState(State):
 
 
 # Configure app with main state class
-app = rx.App(state=State, style=BASE_STYLE)
+app = rx.App(state=State, style=BASE_STYLE, stylesheets=STYLESHEETS)
 
 
 @app.api.get("/health-check", status_code=200)
