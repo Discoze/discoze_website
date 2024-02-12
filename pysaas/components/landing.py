@@ -9,76 +9,141 @@ def hero() -> rx.Component:
         rx.vstack(
             rx.box(
                 rx.tablet_and_desktop(
+                    rx.container(
+                        
                     rx.text(
-                        "Discover and Converse with People Through AI Twins!",
-                        font_size="1.5em",
-                        font_weight=700,
-                    ),
-                    rx.text(
-                        "Discoze",
-                        font_size="2em",
+                        "Converse with AI characters, with creators also participating in the conversations!",
+                        font_size="1.7em",
                         font_weight=800,
-                        background_image="linear-gradient(371.68deg, #7F00FF  25%, #6495ED 50%)",
-                        background_clip="text",
+                        text_align="center",
+
                     ),
-                    text_align="center",
+                    max_width="80%",
+                    ),
+                    rx.hstack(
+                            
+                        rx.text(
+                            "Vedvaani",
+                            font_size="1.8em",
+                            font_weight=800,
+                            background_image="linear-gradient(45deg, #F5750D, #Fd0)",
+                            background_clip="text",
+                            text_align="center",
+
+                        ),
+                        rx.text(
+                            "by",
+                            font_size="1em",
+                            font_weight=700,
+                            text_align="center",
+
+                        ),
+                        rx.text(
+                            "discoze",
+                            font_size="1.2em",
+                            font_weight=700,
+                            # background_image="linear-gradient(371.68deg, #7F00FF  25%, #6495ED 50%)",
+                            # background_clip="text",
+                            text_align="center",
+
+                        ),
+                        width="100%",
+                        text_align="center",
+                        justify_content="center",
+                        align_items="baseline"
+
+                    ),
                     # line_height="1.15",
                 ),
                 rx.mobile_only(
+                    rx.container(
+                        
                     rx.text(
-                        "Discover and Converse with People Through AI Twins!",
-                        font_size="1.5em",
-                        font_weight=700,
-                    ),
-                    rx.text(
-                        "Discoze",
-                        font_size="1.5em",
+                        "Converse with AI characters, with creators also participating in the conversations!",
+                        font_size="1em",
                         font_weight=800,
-                        background_image="linear-gradient(371.68deg, #7F00FF  25%, #6495ED 50%)",
-                        background_clip="text",
                     ),
-                    text_align="center",
+                                                text_align="center",
+                    padding="0px 10px 0px 10px"
+                    ),
+                    rx.hstack(
+                            
+                        rx.text(
+                            "Vedvaani",
+                            font_size="1em",
+                            font_weight=800,
+                            background_image="linear-gradient(45deg, #F5750D, #Fd0)",
+                            background_clip="text",
+                            text_align="center",
+                            justify_content="center"
+
+                        ),
+                        rx.text(
+                            "by",
+                            font_size="0.6em",
+                            font_weight=700,
+                            text_align="center",
+
+                        ),
+                        rx.text(
+                            "Discoze",
+                            font_size="0.7em",
+                            font_weight=700,
+                            # background_image="linear-gradient(371.68deg, #7F00FF  25%, #6495ED 50%)",
+                            # background_clip="text",
+                            text_align="center",
+
+                        ),
+                        width="100%",
+                        text_align="center",
+                        justify_content="center",
+                        align_items="baseline"
+
+                    ),
+
                     # line_height="1.15",
                 ),
             ),
             rx.container(
-                "Create AI Twins that can do the talking for you!",
-                color="grey",
+                "Get instant voice and text replies from characters at ease.",
+                color="#F5750D",
                 font_size="0.6em",
                 text_align="center",
+                font_weight="bold"
+
             ),
             rx.hstack(
                 rx.cond(
                     pysaas.State.signed_out,
                     rx.link(
                         rx.button(
-                            "Join the waitlist ›",
-                            bg="black",
+                            "Download Now",
+                            bg="#F5750D",
                             box_shadow=styles.DOC_SHADOW_LIGHT,
-                            color="white",
+                            color="black",
                             margin_top=0,
                             size="md",
                             border="2px solid black",
-                            _hover={
-                                "box_shadow": "0 0 .12em .07em #6495ED, 0 0 .25em .11em #6495ED",
+                             _hover={
+                                "box_shadow": "0 0 .12em .07em #FD0, 0 0 .25em .11em #F5750D",
                             },
                         ),
-                        href="https://forms.gle/xrDtdJ5BfmWMfin77",
+                        href="https://play.google.com/store/apps/details?id=com.vedvaani.app",
                     ),
                     rx.link(
                         rx.button(
-                            "Join the waitlist ›",
-                            bg="black",
+                            "Download Now",
+                            bg="#F5750D",
                             box_shadow=styles.DOC_SHADOW_LIGHT,
-                            color="white",
+                            color="black",
                             margin_top=0,
                             size="md",
                             border="2px solid black",
                             _hover={
-                                "box_shadow": "0 0 .12em .07em #6495ED, 0 0 .25em .11em #6495ED",
+                                "box_shadow": "0 0 .12em .07em #FD0, 0 0 .25em .11em #F5750D",
                             },
                         ),
-                        href="https://forms.gle/xrDtdJ5BfmWMfin77",
+                        href="https://play.google.com/store/apps/details?id=com.vedvaani.app",
                     ),
                 ),
                 rx.link(
@@ -90,9 +155,9 @@ def hero() -> rx.Component:
                         margin_top=0,
                         size="md",
                         border="2px solid black",
-                        _hover={
-                            "box_shadow": "0 0 .12em .07em #6495ED, 0 0 .25em .11em #6495ED",
-                        },
+                         _hover={
+                                "box_shadow": "0 0 .12em .07em #FD0, 0 0 .25em .11em #F5750D",
+                            },
                     ),
                     href="mailto: hello@discoze.com",
                     _hover={
@@ -133,8 +198,8 @@ def features() -> rx.Component:
             padding_bottom="0.5em",
         ),
         rx.container(
-            "Create your AI Twin. Discover and chat instantly to people's AI Twins you like. Get discovered and make friends!",
-            color="grey",
+            "Users can interact with AI Astrologers, Movie Characters, Career and Love Coaches,Influencers, and even participate in an Adventure Game",
+            color="#F5750D",
             font_size="1.25em",
             text_align="center",
             padding_bottom="1.5em"
@@ -145,20 +210,44 @@ def features() -> rx.Component:
                     rx.hstack(
                         rx.box(
                             rx.vstack(
-                                rx.image(
-                                    src="/user.svg",
-                                    height="2em",
-                                    width="2em",
-                                ),
+                                # rx.image(
+                                #     # src="/user.svg",
+                                #     height="2em",
+                                #     width="2em",
+                                # ),
                                 rx.text(
-                                    "Create your AI Twin!",
+                                    "Astrology and Horoscope",
                                     font_size=styles.H2_FONT_SIZE,
                                     font_weight=styles.BOLD_WEIGHT,
                                     color="black",
                                 ),
                                 rx.text(
-                                    "Clone your voice and photos to create an AI Twin that imitates yourself",
-                                    color="#676767",
+                                    "Get personalized daily horoscope & free birth chart readings with our astrology app. Explore astrology signs & natal charts today!",
+                                    color="#F5750D",
+                                ),
+                                margin_bottom="1em",
+                                style=styles.BOX_STYLES,
+                                height="18em",
+                                width="22em",
+                                padding_top="2em",
+                            ),
+                        ),
+                        
+                        rx.box(
+                            rx.vstack(
+                                # rx.image(
+                                #     height="2em",
+                                #     width="2em",
+                                # ),
+                                rx.text(
+                                    "Truth and Dare Game Questions",
+                                    font_size=styles.H2_FONT_SIZE,
+                                    font_weight=styles.BOLD_WEIGHT,
+                                    color="black",
+                                ),
+                                rx.text(
+                                    "Explore spicy never have I ever & truth or dare questions for adults. Couples edition!",
+                                    color="#F5750D",
                                 ),
                                 margin_bottom="1em",
                                 style=styles.BOX_STYLES,
@@ -169,20 +258,20 @@ def features() -> rx.Component:
                         ),
                         rx.box(
                             rx.vstack(
-                                rx.image(
-                                    src="/card.svg",
-                                    height="2em",
-                                    width="2em",
-                                ),
+                                # rx.image(
+                                #     # src="/user.svg",
+                                #     height="2em",
+                                #     width="2em",
+                                # ),
                                 rx.text(
-                                    "Give AI Twin your personality",
+                                    "Pickup Lines & Relationship Advice",
                                     font_size=styles.H2_FONT_SIZE,
                                     font_weight=styles.BOLD_WEIGHT,
-                                    color="black",
+                                    color="black"
                                 ),
                                 rx.text(
-                                    "Your AI Twin will converse with you and learn about your personality",
-                                    color="#676767",
+                                    "Elevate your relationship with couples advice and witty pickup lines!",
+                                    color="#F5750D",
                                 ),
                                 margin_bottom="1em",
                                 style=styles.BOX_STYLES,
@@ -197,20 +286,20 @@ def features() -> rx.Component:
                     rx.hstack(
                         rx.box(
                             rx.vstack(
-                                rx.image(
-                                    src="/blog.svg",
-                                    height="2em",
-                                    width="2em",
-                                ),
+                                # rx.image(
+                                #     # src="/user.svg",
+                                #     height="2em",
+                                #     width="2em",
+                                # ),
                                 rx.text(
-                                    "Get discovered and make friends",
+                                    "General Knowledge Questions",
                                     font_size=styles.H2_FONT_SIZE,
                                     font_weight=styles.BOLD_WEIGHT,
                                     color="black",
                                 ),
                                 rx.text(
-                                    "People can talk to your AI Twin. You only join the convos that you find interesting!",
-                                    color="#676767",
+                                    "Increase knowledge with Text based General Knowledge Questions.",
+                                    color="#F5750D"
                                 ),
                                 margin_bottom="1em",
                                 style=styles.BOX_STYLES,
@@ -221,20 +310,44 @@ def features() -> rx.Component:
                         ),
                         rx.box(
                             rx.vstack(
-                                rx.image(
-                                    src="/art.svg",
-                                    height="2em",
-                                    width="2em",
-                                ),
+                                # rx.image(
+                                #     # src="/user.svg",
+                                #     height="2em",
+                                #     width="2em",
+                                # ),
                                 rx.text(
-                                    "Chat instantly to people you like!",
+                                    "Kaun Banega Crorepati Game",
                                     font_size=styles.H2_FONT_SIZE,
                                     font_weight=styles.BOLD_WEIGHT,
                                     color="black",
                                 ),
                                 rx.text(
-                                    "Don't wait for your fav person to notice you. Start talking to their AI twin instantly!",
-                                    color="#676767",
+                                    "Play Kaun Banega Crorepati with Amitabh Bachchan",
+                                    color="#F5750D",
+                                ),
+                                margin_bottom="1em",
+                                style=styles.BOX_STYLES,
+                                height="18em",
+                                width="22em",
+                                padding_top="2em",
+                            ),
+                        ),
+                        rx.box(
+                            rx.vstack(
+                                # rx.image(
+                                #     # src="/user.svg",
+                                #     height="2em",
+                                #     width="2em",
+                                # ),
+                                rx.text(
+                                    "Career counseling & Guidance",
+                                    font_size=styles.H2_FONT_SIZE,
+                                    font_weight=styles.BOLD_WEIGHT,
+                                    color="black",
+                                ),
+                                rx.text(
+                                    "Navigate your career path with expert guidance and counseling.",
+                                    color="#F5750D",
                                 ),
                                 margin_bottom="1em",
                                 style=styles.BOX_STYLES,
@@ -253,20 +366,20 @@ def features() -> rx.Component:
             rx.vstack(
                 rx.box(
                     rx.vstack(
-                        rx.image(
-                            src="/user.svg",
-                            height="2em",
-                            width="2em",
-                        ),
+                        # rx.image(
+                        #     # src="/user.svg",
+                        #     height="2em",
+                        #     width="2em",
+                        # ),
                         rx.text(
-                            "Create your AI Twin!",
+                            "Astrology and Horoscope",
                             font_size=styles.H2_FONT_SIZE,
                             font_weight=styles.BOLD_WEIGHT,
                             color="black",
                         ),
                         rx.text(
-                            "Clone your voice and photos to create an AI Twin that imitates yourself",
-                            color="#676767",
+                            "Get personalized daily horoscope & free birth chart readings with our astrology app. Explore astrology signs & natal charts today!",
+                            color="#F5750D",
                         ),
                         margin_bottom="1em",
                         style=styles.BOX_STYLES,
@@ -275,20 +388,20 @@ def features() -> rx.Component:
                 ),
                 rx.box(
                     rx.vstack(
-                        rx.image(
-                            src="/card.svg",
-                            height="2em",
-                            width="2em",
-                        ),
+                        # rx.image(
+                        #     # src="/user.svg",
+                        #     height="2em",
+                        #     width="2em",
+                        # ),
                         rx.text(
-                            "Give AI Twin your personality",
+                            "Truth and Dare Game Questions",
                             font_size=styles.H2_FONT_SIZE,
                             font_weight=styles.BOLD_WEIGHT,
                             color="black",
                         ),
                         rx.text(
-                            "Your AI Twin will converse with you and learn about your personality",
-                            color="#676767",
+                            "Explore spicy never have I ever & truth or dare questions for adults. Couples edition!",
+                            color="#F5750D",
                         ),
                         margin_bottom="1em",
                         style=styles.BOX_STYLES,
@@ -297,20 +410,20 @@ def features() -> rx.Component:
                 ),
                 rx.box(
                     rx.vstack(
-                        rx.image(
-                            src="/blog.svg",
-                            height="2em",
-                            width="2em",
-                        ),
+                        # rx.image(
+                        #     # src="/user.svg",
+                        #     height="2em",
+                        #     width="2em",
+                        # ),
                         rx.text(
-                            "Get discovered and make friends",
+                            "Pickup Lines & Relationship Advice",
                             font_size=styles.H2_FONT_SIZE,
                             font_weight=styles.BOLD_WEIGHT,
                             color="black",
                         ),
                         rx.text(
-                            "People can talk to your AI Twin. You only join the convos that you find interesting!",
-                            color="#676767",
+                            "Elevate your relationship with couples advice and witty pickup lines!",
+                            color="#F5750D",
                         ),
                         margin_bottom="1em",
                         style=styles.BOX_STYLES,
@@ -319,20 +432,65 @@ def features() -> rx.Component:
                 ),
                 rx.box(
                     rx.vstack(
-                        rx.image(
-                            src="/art.svg",
-                            height="2em",
-                            width="2em",
-                        ),
+                        # rx.image(
+                        #     src="/user.svg",
+                        #     height="2em",
+                        #     width="2em",
+                        # ),
                         rx.text(
-                            "Chat instantly to people you like!",
+                            "General Knowledge Questions",
                             font_size=styles.H2_FONT_SIZE,
                             font_weight=styles.BOLD_WEIGHT,
                             color="black",
                         ),
                         rx.text(
-                            "Don't wait for your fav person to notice you. Start talking to their AI twin instantly!",
-                            color="#676767",
+                            "Increase knowledge with Text based General Knowledge Questions.",
+                            color="#F5750D",
+                        ),
+                        margin_bottom="1em",
+                        style=styles.BOX_STYLES,
+                        min_height="15em",
+                    ),
+                ),
+                rx.box(
+                    rx.vstack(
+                        # rx.image(
+                        #     src="/user.svg",
+                        #     height="2em",
+                        #     width="2em",
+                        # ),
+                        rx.text(
+                            "Kaun Banega Crorepati Game",
+                            font_size=styles.H2_FONT_SIZE,
+                            font_weight=styles.BOLD_WEIGHT,
+                            color="black",
+                        ),
+                        rx.text(
+                            "Play Kaun Banega Crorepati with Amitabh Bachchan. Text based General Knowledge Questions.",
+                            color="#F5750D",
+                        ),
+                        margin_bottom="1em",
+                        style=styles.BOX_STYLES,
+                        min_height="15em",
+                    ),
+                ),
+                
+                rx.box(
+                    rx.vstack(
+                        # rx.image(
+                        #     src="/user.svg",
+                        #     height="2em",
+                        #     width="2em",
+                        # ),
+                        rx.text(
+                            "Career counseling & Guidance",
+                            font_size=styles.H2_FONT_SIZE,
+                            font_weight=styles.BOLD_WEIGHT,
+                            color="black",
+                        ),
+                        rx.text(
+                            "Navigate your career path with expert guidance and counseling.",
+                            color="#F5750D",
                         ),
                         margin_bottom="1em",
                         style=styles.BOX_STYLES,
@@ -1479,23 +1637,23 @@ def cta() -> rx.Component:
                     "We respond lightning fast. Say hello@discoze.com",
                     font_weight=styles.BOLD_WEIGHT,
                     font_size=styles.H3_FONT_SIZE,
+                    color="white"
                 ),
                 rx.cond(
                     pysaas.State.signed_out,
                     rx.link(
                         rx.button(
-                            "Join the waitlist now!",
-                            bg="white",
+                            "Download now!",
+                            bg="#F5750D",
                             box_shadow=styles.DOC_SHADOW_LIGHT,
                             color="black",
                             margin_top=0,
-                            size="sm",
-                            border="2px solid white",
-                            _hover={
-                                "box_shadow": "0 0 .12em .07em #6495ED, 0 0 .25em .11em #6495ED",
+                            size="md",
+                             _hover={
+                                "box_shadow": "0 0 .12em .07em #FD0, 0 0 .25em .11em #F5750D",
                             },
                         ),
-                        href="https://forms.gle/xrDtdJ5BfmWMfin77",
+                        href="https://play.google.com/store/apps/details?id=com.vedvaani.app",
                     ),
                     rx.link(
                         rx.button(
