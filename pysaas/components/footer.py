@@ -32,11 +32,6 @@ def footer() -> rx.Component:
                         style=styles.FOOTER_ITEM_STYLE,
                     ),
                     rx.link(
-                        "GitHub",
-                        href="https://github.com/rushout09/discoze_website",
-                        style=styles.FOOTER_ITEM_STYLE,
-                    ),
-                    rx.link(
                         "Twitter",
                         href="https://twitter.com/Vedvaani_",
                         style=styles.FOOTER_ITEM_STYLE,
@@ -115,11 +110,6 @@ def blog_footer() -> rx.Component:
                         rx.link(
                             "Contact Us",
                             href="mailto: hello@discoze.com",
-                            style=styles.FOOTER_ITEM_STYLE,
-                        ),
-                        rx.link(
-                            "GitHub",
-                            href="https://github.com/rushout09/discoze_website",
                             style=styles.FOOTER_ITEM_STYLE,
                         ),
                          rx.link(

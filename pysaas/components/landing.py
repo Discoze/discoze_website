@@ -78,7 +78,7 @@ def hero() -> rx.Component:
                 ),
                 rx.link(
                     rx.button(
-                        "Say hello@discoze.com",
+                        "Email at vedvaani@discoze.com",
                         bg="white",
                         box_shadow=styles.DOC_SHADOW_LIGHT,
                         color="black",
@@ -89,7 +89,7 @@ def hero() -> rx.Component:
                             "box_shadow": "0 0 .12em .07em #FD0, 0 0 .25em .11em #F5750D",
                         },
                     ),
-                    href="mailto: hello@discoze.com",
+                    href="mailto: vedvaani@discoze.com",
                     _hover={
                         "text_decoration": "none",
                     }
@@ -128,7 +128,7 @@ def features() -> rx.Component:
             padding_bottom="0.5em",
         ),
         rx.container(
-            "Users can interact with AI astrologers, as well as influencers in food, fashion, travel, and specialists in career advice, languages, and relationship coaching.",
+            "Users can interact with AI astrologers, influencers in food, fashion, travel, and specialists in career advice, languages, and relationship coaching.",
             color="gray",
             font_size="1.25em",
             text_align="center",
@@ -152,7 +152,7 @@ def features() -> rx.Component:
                                     color="black",
                                 ),
                                 rx.text(
-                                    "Get personalized daily horoscope & free birth chart readings with our astrology app. Explore astrology signs & natal charts today!",
+                                    "Get personalized daily horoscope & free birth chart readings with our app. Explore astrology signs & natal charts today!",
                                     color="gray",
                                 ),
                                 margin_bottom="1em",
@@ -1564,7 +1564,7 @@ def cta() -> rx.Component:
         rx.box(
             rx.vstack(
                 rx.heading(
-                    "We respond lightning fast. Say hello@discoze.com",
+                    "We respond lightning fast. Email at vedvaani@discoze.com",
                     font_weight=styles.BOLD_WEIGHT,
                     font_size=styles.H3_FONT_SIZE,
                     color="white"
