@@ -23,12 +23,12 @@ def footer() -> rx.Component:
                     rx.text("Social", color=styles.DOC_REG_TEXT_COLOR),
                     rx.link(
                         "Instagram",
-                        href="https://www.instagram.com/vedvaani9/",
+                        href="https://www.instagram.com/vedvaani_/",
                         style=styles.FOOTER_ITEM_STYLE,
                     ),
                     rx.link(
                         "Contact Us",
-                        href="mailto: hello@discoze.com",
+                        href="mailto: vedvaani@discoze.com",
                         style=styles.FOOTER_ITEM_STYLE,
                     ),
                     rx.link(
@@ -104,12 +104,12 @@ def blog_footer() -> rx.Component:
                         rx.text("Social", color=styles.DOC_REG_TEXT_COLOR),
                         rx.link(
                             "Instagram",
-                            href="https://www.instagram.com/vedvaani9/",
+                            href="https://www.instagram.com/vedvaani_/",
                             style=styles.FOOTER_ITEM_STYLE,
                         ),
                         rx.link(
                             "Contact Us",
-                            href="mailto: hello@discoze.com",
+                            href="mailto: vedvaani@discoze.com",
                             style=styles.FOOTER_ITEM_STYLE,
                         ),
                          rx.link(

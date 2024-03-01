@@ -59,7 +59,7 @@ def hero() -> rx.Component:
                                 "box_shadow": "0 0 .12em .07em #FD0, 0 0 .25em .11em #F5750D",
                             },
                         ),
-                        href="https://play.google.com/store/apps/details?id=com.vedvaani.app",
+                        href="https://linktr.ee/vedvaani",
                     ),
                     rx.link(
                         rx.button(
@@ -73,7 +73,7 @@ def hero() -> rx.Component:
                                 "box_shadow": "0 0 .12em .07em #FD0, 0 0 .25em .11em #F5750D",
                             },
                         ),
-                        href="https://play.google.com/store/apps/details?id=com.vedvaani.app",
+                        href="https://linktr.ee/vedvaani",
                     ),
                 ),
                 rx.link(
@@ -1583,7 +1583,7 @@ def cta() -> rx.Component:
                                 "box_shadow": "0 0 .12em .07em #FD0, 0 0 .25em .11em #F5750D",
                             },
                         ),
-                        href="https://play.google.com/store/apps/details?id=com.vedvaani.app",
+                        href="https://linktr.ee/vedvaani",
                     ),
                     rx.link(
                         rx.button(
