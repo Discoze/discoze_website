@@ -31,6 +31,7 @@ from pysaas.pages.signin import signin
 from pysaas.pages.signup import signup
 from pysaas.pages.signout import signout
 from pysaas.pages.dashboard import dashboard
+from pysaas.pages.app_add import app_add
 from pysaas.pages.notfound import not_found
 from pysaas.pages.terms import terms
 from pysaas.pages.privacy import privacy
@@ -700,6 +701,14 @@ app.add_page(
     title='vedvaani | Cookies Policy',
     description='TBD description',
     image='/preview.png',
+)
+
+app.add_page(
+    app_add,
+    title='vedvaani | App Ads',
+    description='App Ads Txt',
+    image='/preview.png',
+    route='app-ads.txt'
 )
 
 app.compile()
